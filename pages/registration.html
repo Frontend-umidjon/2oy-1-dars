@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           background-image: url(/Css-1/Images/background.jpg);
+            margin: 0;
+        }
+        .registration-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .registration-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .registration-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .registration-container label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            margin: 12px 0 6px;
+            color: #666;
+        }
+        .registration-container input[type="text"],
+        .registration-container input[type="email"],
+        .registration-container input[type="password"],
+        .registration-container input[type="tel"],
+        .registration-container input[type="date"] {
+            width: calc(100% - 24px);
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .registration-container input[type="text"]:focus,
+        .registration-container input[type="email"]:focus,
+        .registration-container input[type="password"]:focus,
+        .registration-container input[type="tel"]:focus,
+        .registration-container input[type="date"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .registration-container input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .registration-container input[type="submit"]:hover {
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+        }
+        .terms-and-conditions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .terms-and-conditions input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .terms-and-conditions label {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .terms-and-conditions a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .terms-and-conditions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Create Account</h2>
+        <form action="/submit-registration" method="post">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Номер телефона</label>
+            <input type="tel" id="phone" name="phone" placeholder="Например +1234567890" required>
+            
+            <label for="dob">Дата рождения</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm-password">Подтвеодить пароль</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            
+            <div class="terms-and-conditions">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Я соглашаюсь с <a href="#">Условиями пользования и Политикой конфиденциальности</a></label>
+            </div>
+            
+            <input type="submit" value="Зарегистрироватся">
+        </form>
+    </div>
+</body>
+</html>
